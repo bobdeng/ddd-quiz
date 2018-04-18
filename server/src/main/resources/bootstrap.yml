@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: server
+---
+spring:
+  profiles: dev
+  cloud:
+    config:
+      uri: http://192.168.1.125:9000/config
+      name: discover
+---
+spring:
+  profiles: release
+  cloud:
+    config:
+      uri: http://192.168.0.16:9002
+      name: discover
