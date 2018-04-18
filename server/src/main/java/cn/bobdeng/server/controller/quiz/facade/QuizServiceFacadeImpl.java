@@ -2,6 +2,7 @@ package cn.bobdeng.server.controller.quiz.facade;
 
 import cn.bobdeng.quiz.domain.entity.QuestionInBank;
 import cn.bobdeng.quiz.domain.entity.Quiz;
+import cn.bobdeng.quiz.domain.quiz.QuizRepository;
 import cn.bobdeng.quiz.domain.quiz.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,8 @@ public class QuizServiceFacadeImpl implements QuizServiceFacade {
     public static final int QUESTION_COUNT = 30;
     @Autowired
     QuizService quizService;
+    @Autowired
+    QuizRepository quizRepository;
 
     @Override
     public QuizDTO createNewQuiz() {
@@ -38,7 +41,7 @@ public class QuizServiceFacadeImpl implements QuizServiceFacade {
 
     @Override
     public QuizDTO getQuiz(String id) {
-        Quiz quiz = quizService.getQuiz(id);
+        Quiz quiz = quizRepository.getQuizById(id);
         return getQuizDTO(quiz);
     }
 

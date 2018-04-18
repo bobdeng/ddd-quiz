@@ -13,7 +13,4 @@ public interface QuizService {
 
     Quiz submitAnswer(String quizId, int answer);
 
-    QuizResult getQuizResult(String quizId);
-
-    Quiz getQuiz(String id);
 }

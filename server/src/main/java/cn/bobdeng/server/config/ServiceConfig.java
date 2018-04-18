@@ -9,8 +9,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ServiceConfig {
     @Bean
-    QuizService quizService(QuizRepository quizRepository){
-        QuizServiceImpl quizService=new QuizServiceImpl();
+    QuizService quizService(QuizRepository quizRepository) {
+        QuizServiceImpl quizService = new QuizServiceImpl();
         quizService.setQuizRepository(quizRepository);
         return quizService;
     }

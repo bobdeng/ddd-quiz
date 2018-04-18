@@ -49,25 +49,9 @@ public class QuizServiceImpl implements QuizService {
         return quiz;
     }
 
-
     private void submitAnswer(int answer, Quiz quiz) {
         QuestionInBank questionInBank = quizRepository.findQuestionInBankById(quiz.getCurrentQuestion().getQuestionId());
         quiz.submitAnswerAndGoNext(answer, questionInBank);
         quizRepository.saveQuiz(quiz);
     }
-
-    @Override
-    public QuizResult getQuizResult(String quizId) {
-        Quiz quiz = quizRepository.getQuizById(quizId);
-        return getQuizResult(quiz);
-    }
-
-    private QuizResult getQuizResult(Quiz quiz) {
-        return QuizResult.builder()
-                .score(quiz.getScore())
-                .id(quiz.getId())
-                .rank(quizRepository.getRank(quiz))
-                .build();
-    }
-
 }

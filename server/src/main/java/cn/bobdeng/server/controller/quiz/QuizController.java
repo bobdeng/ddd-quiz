@@ -1,5 +1,6 @@
 package cn.bobdeng.server.controller.quiz;
 
+import cn.bobdeng.quiz.domain.quiz.QuizRepository;
 import cn.bobdeng.server.controller.quiz.facade.QuizDTO;
 import cn.bobdeng.server.controller.quiz.facade.QuizServiceFacade;
 import org.springframework.beans.factory.annotation.Autowired;
