@@ -9,9 +9,11 @@ public interface QuizService {
 
     Quiz createNewQuiz(int questionCount);
 
-    QuestionInBank getQuizCurrentQuestion(String quizId);
+    QuestionInBank getQuestionInBank(String questionId);
 
     Quiz submitAnswer(String quizId, int answer);
 
     QuizResult getQuizResult(String quizId);
+
+    Quiz getQuiz(String id);
 }

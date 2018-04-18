@@ -33,9 +33,8 @@ public class QuizServiceImpl implements QuizService {
     }
 
     @Override
-    public QuestionInBank getQuizCurrentQuestion(String quizId) {
-        Question question = quizRepository.getQuizById(quizId).getCurrentQuestion();
-        QuestionInBank questionInBank = quizRepository.findQuestionInBankById(question.getQuestionId());
+    public QuestionInBank getQuestionInBank(String questionId) {
+        QuestionInBank questionInBank = quizRepository.findQuestionInBankById(questionId);
         return questionInBank;
     }
 
